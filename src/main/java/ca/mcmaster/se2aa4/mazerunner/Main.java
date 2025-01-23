@@ -52,7 +52,10 @@ public class Main {
                 System.out.println("User position: (" + user.x_coor + ", " + user.y_coor + "), direction: " + user.direction);
                 System.out.println("\nMaze State:");
                 user.printMazeWithUser();
+                user.move_forward();
+                directions.append("F");
             }
+            user.printMazeWithUser();
             System.out.println("User has reached the exit!");
             logger.info("**** Maze Navigation Complete");
             // Print the directions
@@ -168,6 +171,7 @@ class User {
         this.y_coor = startY;
         this.maze = maze;
     }
+
     public void printMazeWithUser() {
         for (int y = 0; y < maze.length; y++) {
             for (int x = 0; x < maze[y].length; x++) {
@@ -179,5 +183,9 @@ class User {
             }
             System.out.println();
         }
+    }
+
+    public void move_forward() {
+        x_coor++;
     }
 }
