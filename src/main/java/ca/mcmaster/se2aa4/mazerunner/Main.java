@@ -126,14 +126,6 @@ public class Main {
     /**
      * Finds the exit row of the maze (right side).
      */
-    private static int find_end(char[][] maze) {
-        for (int row = 0; row < maze.length; row++) {
-            if (maze[row][maze[0].length - 1] == ' ') {
-                return row;
-            }
-        }
-        return -1;
-    }
 
     public static String compress(String input) {
         if (input == null || input.isEmpty()) {
